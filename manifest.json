@@ -1,0 +1,15 @@
+{
+  "name": "Dummy for Dummmies",
+  "version": "1.0",
+  "description": "A sample chrome extension to explore it's super powers",
+  "browser_action": {
+    "default_title": "Have a good day",
+    "default_popup": "popup.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": ["activeTab"],
+  "manifest_version": 2,
+  "author": "Ruphaa"
+}

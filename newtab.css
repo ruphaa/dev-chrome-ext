@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.card-component {
+  width: 50%;
+  margin-top: 220px;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  left: 200px;
+  width: 500px;
+  top: -100px;
+  color: #4d4848;
+  font-family: "Merriweather", serif;
+  font-size: 30px;
+}
+
+.card__image {
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  height: 300px;
+  box-shadow: 0px 0px 14px 5px #e1dfe7;
+}
+
+.card__image img {
+  width: 500px;
+  height: 300px;
+}
+
+.dev-link {
+  position: absolute;
+  left: 200px;
+  top: 350px;
+}
+
+.article-wrapper {
+  width: 80%;
+  background-color: #f7f6fb;
+  margin-top: 50px;
+  font-size: 14px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.article {
+  width: 500px;
+  margin-left: 100px;
+}
+
+.card__title {
+  font-family: "Josefin Sans";
+  margin-top: -60px;
+  font-size: 25px;
+  line-height: 30px;
+  color: #4d4848;
+}
+
+.card__description {
+  margin-top: 25px;
+  font-family: "Josefin Sans";
+  color: #494444;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+.user {
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #494444;
+  font-family: "Josefin Sans";
+}
+.name {
+  margin-bottom: 10px;
+}
+.website {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #746e6e;
+  display: inline;
+  border-bottom: 3px solid #d3cdcd;
+}
+
+.website a {
+  color: #898383;
+  text-decoration: none;
+}
