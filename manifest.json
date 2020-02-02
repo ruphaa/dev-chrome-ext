@@ -1,7 +1,7 @@
 {
-  "name": "Dummy for Dummmies",
+  "name": "DEV article a day",
   "version": "1.0",
-  "description": "A sample chrome extension to explore it's super powers",
+  "description": "A chrome extension to bring a DEV article everyday to the user's doorstep(new tab)",
   "browser_action": {
     "default_title": "Have a good day",
     "default_popup": "popup.html"
