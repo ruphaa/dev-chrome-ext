@@ -11,31 +11,31 @@ body {
 
 .wrapper {
   display: flex;
+  flex-direction: row-reverse;
   height: 100vh;
 }
 
 .card-component {
   width: 50%;
-  margin-top: 220px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
-  position: absolute;
-  left: 200px;
   width: 500px;
-  top: -100px;
   color: #4d4848;
   font-family: "Merriweather", serif;
   font-size: 30px;
+  margin-left: 50%;
+  transform: translateY(-30px);
 }
 
 .card__image {
-  position: absolute;
-  top: 20px;
-  left: 200px;
   height: 300px;
   box-shadow: 0px 0px 14px 5px #e1dfe7;
+  margin-left: 50%;
 }
 
 .card__image img {
@@ -104,4 +104,49 @@ body {
 .website a {
   color: #898383;
   text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .article {
+    width: 15rem;
+    margin-left: 6rem;
+  }
+  .card__image img {
+    width: 25rem;
+    height: 300px;
+  }
+  .title {
+    width: 25rem;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card__image {
+    height: 285px;
+  }
+  .card__image img {
+    width: 20rem;
+    height: 285px;
+  }
+  .article {
+    width: 15rem;
+    margin-left: 6rem;
+  }
+  .card__title {
+    font-size: 20px;
+  }
+  .card__description {
+    font-size: 13px;
+  }
+  .user {
+    font-size: 14px;
+  }
+  .user .website {
+    font-size: 13px;
+  }
+  .title {
+    width: 20rem;
+    font-size: 19px;
+  }
 }

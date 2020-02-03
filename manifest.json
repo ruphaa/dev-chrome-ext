@@ -1,10 +1,15 @@
 {
-  "name": "DEV article a day",
-  "version": "1.0",
-  "description": "A chrome extension to bring a DEV article everyday to the user's doorstep(new tab)",
-  "browser_action": {
+  "name": "DEV Everyday",
+  "version": "2.0",
+  "description": "Chrome extension that lets you catch up with the recent DEV article, every time you open up a new tab",
+  "page_action": {
     "default_title": "Have a good day",
-    "default_popup": "popup.html"
+    "default_icon": {
+      "128": "dev-png.png"
+    }
+  },
+  "icons": {
+    "128": "dev-png.png"
   },
   "chrome_url_overrides": {
     "newtab": "newtab.html"

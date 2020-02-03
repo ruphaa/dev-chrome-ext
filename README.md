@@ -6,4 +6,8 @@ To leverage this "too much of learning" for some extent, I've build a chrome ext
 
 ![](dev-ext.png)
 
-A start to stay ahead of the game!
+Now you can easily catch up with the latest DEV article everytime you open a New Tab!
+There can be times when the work gets piled up and we may not be able to visit the DEV website.
+With this extension, the recent DEV article is right there everytime you open a tab. You can click on the article image to read the entire article by taking you to DEV website and also will be able to visit the author's website.
+
+A good start to stay ahead of the game!

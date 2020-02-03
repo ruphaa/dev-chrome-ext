@@ -1,11 +1,11 @@
-var emptyCardImagePlaceholder = [
-  "https://images.unsplash.com/photo-1488381297039-d6ee94af777e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80",
-  "https://images.unsplash.com/photo-1489359337130-59cfeeccc6c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1513106021000-168e5f56609d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1554672053-c4205442a9fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-  "https://images.unsplash.com/photo-1547555999-14e818e09e33?ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80",
-  "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-  "https://images.unsplash.com/photo-1546700908-f2001b40cf76?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+const emptyCardImagePlaceholder = [
+  "random1.jpeg",
+  "random2.jpeg",
+  "random3.jpeg",
+  "random4.jpeg",
+  "random5.jpeg",
+  "random6.jpeg",
+  "random7.jpeg"
 ];
 
 const buildDevCardComponent = function(article) {
@@ -15,15 +15,17 @@ const buildDevCardComponent = function(article) {
   var userName = document.querySelector(".name");
   var userWebsite = document.querySelector(".user .website a");
   let url = document.querySelector(".card__image a");
-
-  let descriptionHTML =
-    article.body_html &&
-    article.body_html
-      .slice(0, 500)
-      .replace(/<\/?[^>]+>/gi, " ")
-      .replace(/<br>/g, "")
-      .replace(/<img>/g, "")
-      .trim();
+  debugger;
+  let descriptionText =
+    article.description ||
+    (article.body_html &&
+      article.body_html
+        .replace(/<\/?[^>]+>/gi, " ")
+        .replace(/\n/g, "")
+        .replace(/<br\/>/g, "")
+        .replace(/<img>/g, "")
+        .slice(0, 500)
+        .trim());
   image.setAttribute(
     "src",
     article.cover_image ||
@@ -35,7 +37,8 @@ const buildDevCardComponent = function(article) {
 
   url.setAttribute("href", article.url);
   title.innerText = article.title;
-  description.innerText = (article.description || descriptionHTML) + "...";
+  description.innerText =
+    descriptionText.charAt(0).toUpperCase() + descriptionText.slice(1) + "...";
   userName.innerText = article.user.name;
   userWebsite.setAttribute("href", userURL);
 };
@@ -78,5 +81,21 @@ const displayDevArticle = function() {
     });
 };
 
+const showNotFoundPage = function() {
+  let img = document.querySelector(".card__image img");
+  let title = document.querySelector(".card__title");
+  let userName = document.querySelector(".user .name");
+  let userURL = document.querySelector(".user .website");
+  img.setAttribute("src", "page-not-found.png");
+  title.innerText =
+    "Oopsie! Either you must have lost the internet or the Internet must have lost you 🤔";
+  userName.innerText = "";
+  userURL.innerHTML = "";
+};
+
 console.log("A DEV article a day keeps a person awake");
-document.addEventListener("DOMContentLoaded", displayDevArticle);
+if (navigator.onLine) {
+  document.addEventListener("DOMContentLoaded", displayDevArticle);
+} else {
+  showNotFoundPage();
+}
